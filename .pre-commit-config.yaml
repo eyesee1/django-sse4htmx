@@ -2,7 +2,7 @@ exclude: '^docs/|/migrations/|devcontainer.json'
 default_stages: [pre-commit]
 
 default_language_version:
-  python: python3.12
+  python: python3.11
 
 repos:
   - repo: https://github.com/astral-sh/uv-pre-commit
@@ -26,13 +26,6 @@ repos:
       - id: check-docstring-first
       - id: detect-private-key
 
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
-    hooks:
-      - id: prettier
-        args: ['--tab-width', '2', '--single-quote']
-        exclude: 'example_project/templates/|.*\.min\.js|.*\.min\.css'
-
   - repo: https://github.com/adamchainz/django-upgrade
     rev: '1.22.2'
     hooks:
@@ -55,6 +48,13 @@ repos:
     hooks:
       - id: djlint-reformat-django
       - id: djlint-django
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        args: ['--tab-width', '2', '--single-quote']
+        exclude: 'example/templates/|.*\.min\.js|.*\.min\.css'
 
 # sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
 ci:
