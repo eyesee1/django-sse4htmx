@@ -1,0 +1,149 @@
+@use 'sass:list';
+
+$white: #ffffff;
+$black: #000000;
+$pink: hsl(307, 100%, 87%);
+$deep-violet: hsl(271, 52%, 13%);
+$purple: purple;
+
+$body-bg-light: $white;
+$body-color: $deep-violet;
+
+$heading-color: lighten($deep-violet, 5%);
+
+body * {
+  font-family: Helvetica, sans-serif;
+  color: $body-color;
+}
+
+body {
+  background-color: $body-bg-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-color;
+}
+
+kbd {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  padding: 1rem;
+}
+
+#message-types {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.message-type-box {
+  border: 1px solid black;
+  padding: 0.5em;
+  border-radius: 0.5rem;
+  min-width: 15rem;
+  min-height: 33ex;
+}
+
+#message-types > div,
+.buttons-row > form {
+  flex: 1;
+}
+
+.buttons-row > form:last-child {
+  flex: 1.2;
+}
+
+h2 {
+  margin: 0.5rem 0;
+}
+
+#message-types > div:first-child {
+  margin-right: 0.5rem;
+}
+
+#message-types > div:last-child {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.messages-container {
+  min-height: 30ex;
+  max-height: 30ex;
+  overflow-y: auto;
+}
+
+.buttons-row {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+$btn-color: $white;
+$btn-hover-color: lighten($purple, 10%);
+$btn-border-radius: 1.25rem;
+$btn-bg: $purple;
+
+button[type='submit'] {
+  background-color: $btn-bg;
+  color: $btn-color;
+  border: 1px solid $black;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $btn-hover-color;
+  }
+}
+
+.submit-count {
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.15rem 0.25rem;
+  border: 2px solid cornflowerblue;
+  background-color: hsl(196, 61%, 70%);
+  border-radius: 0.25rem;
+}
+
+// "Forcing" the trans agenda on the world... 😈
+$flag-blue: #84cbff;
+$flag-pink: $pink;
+$flag-white: white;
+
+$flag-cycle: $flag-blue, $flag-pink, $flag-white, $flag-pink; // skipping last blue so we don't have two blues in a row
+
+$many-flags: list.join($flag-cycle, $flag-cycle);
+$many-flags: list.join($many-flags, $many-flags);
+$many-flags: list.join($many-flags, $many-flags);
+
+ul.flag {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  & li {
+    padding: 0.5rem 0.5rem;
+    margin: 0;
+  }
+
+  @for $i from 1 through list.length($many-flags) {
+    & li:nth-child(#{$i}) {
+      background-color: list.nth($many-flags, $i);
+    }
+  }
+}
+
+.flag li {
+  color: black;
+}

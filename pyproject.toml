@@ -5,7 +5,18 @@ description = "A simple wrapper around Django EventStream's `send_event` to make
 authors = [
     { name = "Duna C.", email = "marinas.bobble-05@icloud.com" },
 ]
+maintainers = [
+    { name = "Duna C.", email = "marinas.bobble-05@icloud.com" },
+]
 readme = "README.md"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Text Processing :: Markup :: HTML",
+]
 requires-python = ">=3.11.6"
 dependencies = [
     "django>=5.0",
@@ -18,17 +29,35 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
+    "bump2version>=1.0.1",
     "daphne>=4.1.2",
+    "django-extensions>=3.2.3",
+    "django-htmx>=1.21.0",
+    "django-model-utils>=5.0.0",
     "django-pytest>=0.2.0",
     "django-stubs[compatible-mypy]>=5.1.1",
     "django-template-partials>=24.4",
+    "faker>=33.1.0",
+    "ipython>=8.31.0",
     "mypy>=1.13.0",
     "pre-commit>=4.0.1",
     "pytest>=8.3.4",
     "pytest-django>=4.9.0",
     "ruff>=0.8.4",
+    "twisted[http2,tls]>=24.11.0",
 ]
 
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "example",
+    "*.sqlite3",
+    ".venv",
+    ".pre-commit-config.yaml",
+    ".editorconfig",
+    ".gitignore",
+    ".idea",
+    ".prettierrc.toml",
+]
 
 # ==== pytest ====
 [tool.pytest.ini_options]

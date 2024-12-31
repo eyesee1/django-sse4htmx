@@ -1,2 +1,2 @@
 # ruff: noqa: F401
-from .sender import ServerSentEventHTMLFragmentSender
+from .sender import SSEFragmentSender

@@ -15,9 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+import django_eventstream
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from myapp.views import HomeView, SendAnEvent
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", HomeView.as_view(), name="home"),
+    path("send-event/", SendAnEvent.as_view(), name="send-event"),
+    path("events/<channel>/", include(django_eventstream.urls)),
+    *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]

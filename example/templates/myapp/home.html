@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load partials %}
+{% block content %}
+  <h1>Django SSE4HTMX Demo</h1>
+  <div id="message-types">
+
+    <div class="message-type-box">
+      <h2>Default Event Type</h2>
+      <p>
+        Just a plain HTML fragment, no event type specified.
+        <br />
+        <kbd>sse-swap="message"</kbd>
+      </p>
+      <form hx-post="{% url 'send-event' %}"
+            hx-trigger="submit"
+            hx-target="#unnamed-form-result">
+        <input type="hidden" name="event_type" value="message" />
+        <button type="submit">Send One!</button>
+        <span id="unnamed-form-result"></span>&nbsp;<span class="submit-count" title="Number of requests made.">0</span> Sent.
+      </form>
+      <div class="messages-container">
+        <h3>Received Events</h3>
+        <span hx-ext="sse" sse-connect="/events/default/" sse-swap="message">No events yet.</span>
+        <ul id="unnamed-messages" class="flag">
+          <li>New events will appear above this line.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="message-type-box">
+      <h2>Named Event Type</h2>
+      <p>
+        Using named event type.
+        <br />
+        <kbd>sse-swap="MyMessage"</kbd>
+      </p>
+      <div class="buttons-row">
+
+        <form hx-post="{% url 'send-event' %}"
+              hx-trigger="submit"
+              hx-target="#named-form-result">
+          <input type="hidden" name="event_type" value="MyMessage" />
+          <button type="submit">Send One!</button>
+          <span id="named-form-result"></span>&nbsp;<span class="submit-count" title="Number of requests made.">0</span>
+        </form>
+        <form hx-post="{% url 'send-event' %}"
+              hx-trigger="submit"
+              hx-target="#wrong-named-form-result">
+          <input type="hidden" name="event_type" value="BogusMessage" />
+          <button type="submit"
+                  title="sends an event of type BogusMessage, which is ignored because we are only listening for MyMessage">
+            Send a Wrong One!
+          </button>
+          <span id="wrong-named-form-result"></span>&nbsp;<span class="submit-count" title="Number of requests made.">0</span>
+        </form>
+      </div>
+      <div class="messages-container">
+        <h3>Received Events</h3>
+        <span hx-ext="sse" sse-connect="/events/named/" sse-swap="MyMessage">No message yet.</span>
+        <ul id="named-messages" class="flag"  sse-swap="MyMessage">
+          <li>New events will appear above this line.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p>
+    🎉 Hooray for <a href="https://htmx.org/">HTMX</a>, <a href="https://github.com/carltongibson/django-template-partials">django-template-partials</a>, and <a href="https://github.com/fanout/django-eventstream">Django EventStream</a>. 🎉
+
+    <a href="https://www.tillystranstuesdays.com/2024/09/03/the-intentional-trans-allegory-of-i-saw-the-tv-glow-part-1/">There is still time</a>
+  </p>
+{% endblock content %}
+
+{% partialdef one-unnamed-message %}
+  <ul hx-swap-oob="afterbegin:#unnamed-messages">
+    <li>
+      <span style="color: {{ color }}">{{ text }}</span>
+    </li>
+  </ul>
+{% endpartialdef %}
+
+{% partialdef one-named-message %}
+  <ul hx-swap-oob="afterbegin:#named-messages">
+    <li>
+      <span style="color: {{ color }}">{{ text }}</span>
+    </li>
+  </ul>
+{% endpartialdef %}

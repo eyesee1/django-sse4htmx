@@ -18,23 +18,27 @@
     {% endblock css %}
 
     {% block javascript %}
-      <script defer src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.js" integrity="sha384-oeUn82QNXPuVkGCkcrInrS1twIxKhkZiFfr2TdiuObZ3n3yIeMiqcRzkIcguaof1" crossorigin="anonymous" />
-<script defer src="https://unpkg.com/htmx-ext-sse@2.2.2/sse.js" />
-{% endblock javascript %}
-</head>
-<body class="{% block bodyclass %}{% endblock bodyclass %}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
-{% block body %}
+      {#      <script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.js" integrity="sha384-oeUn82QNXPuVkGCkcrInrS1twIxKhkZiFfr2TdiuObZ3n3yIeMiqcRzkIcguaof1" crossorigin="anonymous"></script>#}
+      {#      <script src="https://unpkg.com/htmx-ext-sse@2.2.2/sse.js" crossorigin="anonymous"></script>#}
+      <script src="{% static 'js/htmx.js' %}"></script>
+      <script src="{% static 'js/sse.js' %}"></script>
+      <script src="{% static 'js/project.js' %}"></script>
+    {% endblock javascript %}
+  </head>
+  <body class="{% block bodyclass %}{% endblock bodyclass %}"
+        hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    {% block body %}
 
-<div class="container" id="container--main">
-{% block main %}
+      <div class="container" id="container--main">
+        {% block main %}
 
-{% block content %}
-<p>Use this document as a way to quick start any new project.</p>
-{% endblock content %}
+          {% block content %}
+            <p>Use this document as a way to quick start any new project.</p>
+          {% endblock content %}
 
-{% endblock main %}
-</div>
+        {% endblock main %}
+      </div>
 
-{% endblock body %}
-</body>
+    {% endblock body %}
+  </body>
 </html>

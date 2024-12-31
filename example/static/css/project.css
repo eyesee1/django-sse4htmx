@@ -1,0 +1,210 @@
+body * {
+  font-family: Helvetica, sans-serif;
+  color: hsl(271, 52%, 13%);
+}
+
+body {
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(271, 52%, 18%);
+}
+
+kbd {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  padding: 1rem;
+}
+
+#message-types {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.message-type-box {
+  border: 1px solid black;
+  padding: 0.5em;
+  border-radius: 0.5rem;
+  min-width: 15rem;
+  min-height: 33ex;
+}
+
+#message-types > div,
+.buttons-row > form {
+  flex: 1;
+}
+
+.buttons-row > form:last-child {
+  flex: 1.2;
+}
+
+h2 {
+  margin: 0.5rem 0;
+}
+
+#message-types > div:first-child {
+  margin-right: 0.5rem;
+}
+
+#message-types > div:last-child {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.messages-container {
+  min-height: 30ex;
+  max-height: 30ex;
+  overflow-y: auto;
+}
+
+.buttons-row {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button[type='submit'] {
+  background-color: purple;
+  color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+button[type='submit']:hover {
+  background-color: #b300b3;
+}
+
+.submit-count {
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.15rem 0.25rem;
+  border: 2px solid cornflowerblue;
+  background-color: hsl(196, 61%, 70%);
+  border-radius: 0.25rem;
+}
+
+ul.flag {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul.flag li {
+  padding: 0.5rem 0.5rem;
+  margin: 0;
+}
+ul.flag li:nth-child(1) {
+  background-color: #84cbff;
+}
+ul.flag li:nth-child(2) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(3) {
+  background-color: white;
+}
+ul.flag li:nth-child(4) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(5) {
+  background-color: #84cbff;
+}
+ul.flag li:nth-child(6) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(7) {
+  background-color: white;
+}
+ul.flag li:nth-child(8) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(9) {
+  background-color: #84cbff;
+}
+ul.flag li:nth-child(10) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(11) {
+  background-color: white;
+}
+ul.flag li:nth-child(12) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(13) {
+  background-color: #84cbff;
+}
+ul.flag li:nth-child(14) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(15) {
+  background-color: white;
+}
+ul.flag li:nth-child(16) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(17) {
+  background-color: #84cbff;
+}
+ul.flag li:nth-child(18) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(19) {
+  background-color: white;
+}
+ul.flag li:nth-child(20) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(21) {
+  background-color: #84cbff;
+}
+ul.flag li:nth-child(22) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(23) {
+  background-color: white;
+}
+ul.flag li:nth-child(24) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(25) {
+  background-color: #84cbff;
+}
+ul.flag li:nth-child(26) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(27) {
+  background-color: white;
+}
+ul.flag li:nth-child(28) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(29) {
+  background-color: #84cbff;
+}
+ul.flag li:nth-child(30) {
+  background-color: hsl(307, 100%, 87%);
+}
+ul.flag li:nth-child(31) {
+  background-color: white;
+}
+ul.flag li:nth-child(32) {
+  background-color: hsl(307, 100%, 87%);
+}
+
+.flag li {
+  color: black;
+}
+
+/*# sourceMappingURL=project.css.map */
