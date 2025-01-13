@@ -23,6 +23,11 @@ dependencies = [
     "django-eventstream>=5.3.1",
 ]
 
+[project.urls]
+Repository = "https://github.com/eyesee1/django-sse4htmx"
+Documentation = "https://github.com/eyesee1/django-sse4htmx"
+Issues = "https://github.com/eyesee1/django-sse4htmx/issues"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
