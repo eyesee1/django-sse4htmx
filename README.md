@@ -108,7 +108,7 @@ You can watch the JavaScript console to see debugging logs as SSE messages are r
 
 ## Changes
 
-- 0.1.0: Initial release 2025-01-13
+- 0.1.1: Initial release 2025-01-13
 
 ## License
 
