@@ -1,6 +1,6 @@
 [project]
 name = "django-sse4htmx"
-version = "0.1.0"
+version = "0.1.1"
 description = "A simple wrapper around Django EventStream's `send_event` to make it simpler to use with HTMX and django-template-partials."
 authors = [
     { name = "Duna C.", email = "marinas.bobble-05@icloud.com" },

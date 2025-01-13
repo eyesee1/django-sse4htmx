@@ -338,7 +338,7 @@ sdist = { url = "https://files.pythonhosted.org/packages/b2/e2/2a87105042c08a6f1
 
 [[package]]
 name = "django-sse4htmx"
-version = "0.1.0"
+version = "0.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "django" },
