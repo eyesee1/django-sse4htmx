@@ -25,6 +25,9 @@ Install the package using `poetry`:
 poetry add django-sse4htmx
 ```
 
+Follow [Django EventStream](https://github.com/fanout/django-eventstream#setup)'s Setup instructions to set up
+channel(s) for your SSE Events.
+
 ## Usage
 
 ```python
